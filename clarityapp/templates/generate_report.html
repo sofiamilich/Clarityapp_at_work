@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Выгрузка отчета</title>
+</head>
+<body>
+    <h1>Выгрузка отчета</h1>
+    <form action="{% url 'generate_report' %}" method="post">
+        {% csrf_token %}
+        <input type='text' name='message'
+        <button type="submit">Выгрузить отчет</button>
+    </form>
+</body>
+</html>
