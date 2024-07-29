@@ -16,7 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from clarity.views import indexforclarity1, indexforclarity2, generate_report, registration_page
+from django.conf import settings
+from django.conf.urls.static import static
+from clarity.views import  indexforclarity1, indexforclarity2, generate_report, registration_page
 
 
 
@@ -24,6 +26,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', indexforclarity1),
     path('indexforclarity2/', indexforclarity2),
-    path('generate_report/', generate_report),
     path('registration_page/', registration_page),
+    path('generate_report/', generate_report),
 ]
