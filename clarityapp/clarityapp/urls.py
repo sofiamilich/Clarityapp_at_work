@@ -21,7 +21,7 @@ from django.conf.urls.static import static
 from clarity.views import  indexforclarity1, indexforclarity2, generate_report, registration_page
 
 
-
+# Маршруты
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', indexforclarity1),

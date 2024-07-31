@@ -18,7 +18,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
-# Application definition
+# Включенные приложения
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -42,7 +42,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'clarityapp.urls'
 
-
+# где искать шаблоны:
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -106,6 +106,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
+# Папка со стилями:
 
 STATIC_URL = 'static/'
 

@@ -1,9 +1,121 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Отчет</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анализ рекламной кампании</title>
+    <!-- Подключение бутстрап: -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Допол. стили: -->
+    <style>
+        /* Дополнительные стили для таблицы */
+        th {
+            background-color: #f2f2f2; /* светло-серый фон для заголовков */
+        }
+        th, td {
+            padding: 8px; /* Отступы */
+            text-align: left; /* Выравнивание текста */
+        }
+        tr:hover {
+            background-color: #e9ecef; /* Цвет при наведении */
+        }
+    </style>
 </head>
 <body>
-    <a href="{{ download_url }}" download>Скачать файл</a>
+<!--выведем датафреймы в таблицы джанго:-->
+    <div class="container mt-5">
+        <h2 class="text-center">Анализ рекламной кампании</h2>
+        {% for key, dataframe in dictionary_reports.items %}
+            <h4>{{ key }}</h4>
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            {% for column in dataframe.columns %}
+                                <th>{{ column }}</th>
+                            {% endfor %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in dataframe.values %}
+                            <tr>
+                                {% for value in row %}
+                                    <td>{{ value }}</td>
+                                {% endfor %}
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <br>
+        {% endfor %}
+
+    </div>
+<!--    Подключим бутстрап-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Generate Report</title>-->
+<!--    <style>-->
+<!--        table {-->
+<!--            border-collapse: collapse;-->
+<!--            width: 100%;-->
+<!--        }-->
+<!--        th, td {-->
+<!--            border: 1px solid black;-->
+<!--            padding: 8px;-->
+<!--            text-align: left;-->
+<!--        }-->
+<!--        th {-->
+<!--            background-color: #f2f2f2;-->
+<!--        }-->
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <h1>Отчеты</h1>-->
+
+<!--    {% for key, dataframe in dictionary_reports.items %}-->
+<!--        <h2>{{ key }}</h2>-->
+<!--        <table>-->
+<!--            <thead>-->
+<!--                <tr>-->
+<!--                    {% for column in dataframe.columns %}-->
+<!--                        <th>{{ column }}</th>-->
+<!--                    {% endfor %}-->
+<!--                </tr>-->
+<!--            </thead>-->
+<!--            <tbody>-->
+<!--                {% for row in dataframe.values %}-->
+<!--                    <tr>-->
+<!--                        {% for value in row %}-->
+<!--                            <td>{{ value }}</td>-->
+<!--                        {% endfor %}-->
+<!--                    </tr>-->
+<!--                {% endfor %}-->
+<!--            </tbody>-->
+<!--        </table>-->
+<!--        <br>-->
+<!--    {% endfor %}-->
+
+<!--</body>-->
+<!--</html>-->
+
+
+
+
+

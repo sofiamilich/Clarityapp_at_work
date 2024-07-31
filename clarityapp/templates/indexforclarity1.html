@@ -8,6 +8,7 @@
 
   </head>
   <body>
+<!--  Меню: -->
    <nav class="navbar navbar-expand-lg bg-body-tertiary ms-5">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">CLARITY</a>
@@ -33,7 +34,7 @@
     </div>
 
 
-
+<!--    Здесь в будущем будет меню навигации с расширенными возможностями -->
     <span class="placeholder col-12 bg-secondary ms-5"></span>
 
     <ul class="nav nav-underline ms-5">
@@ -48,12 +49,11 @@
       <div class="d-flex flex-wrap">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="http://127.0.0.1:8000/">Главная</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="http://127.0.0.1:8000/registration_page/">Регистрация</a>
           </li>
-
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="http://127.0.0.1:8000/generate_report/">Отчеты</a>
+          </li>
         </ul>
     <div class="d-flex ms-5" style="height: 200px;">
     <div class="vr"></div>
@@ -70,28 +70,14 @@
   </style>
   <div class="col-md-6">
     <!-- Первая карточка -->
-    <div class="card ms-5 card-green" style="width: 15rem;">
+    <div class="card ms-5 card-green" style="width: 18rem;">
       <div class="card-body">
-        <h5 class="card-title">Ключи, давшие конверсию</h5>
-        <h6 class="card-subtitle mb-2 text-body-secondary">< 50 руб/клик</h6>
-        <p class="card-text">Сортировка по убыванию. Выберите желаемый формат выгрузки:</p>
-        <a href="#" class="card-link">exel-формат</a>
-        <a href="#" class="card-link">csv-формат</a>
+        <h5 class="card-title">Анализ рекламной кампании</h5>
+
+        <p class="card-text">По отрицательной и положительной конверсии:</p>
+        <a href="http://127.0.0.1:8000/generate_report/" class="btn btn-primary">Сформировать данные</a>
       </div>
     </div>
-  </div>
-  <div class="col-md-6">
-    <!-- Вторая карточка -->
-    <div class="card ms-5" style="width: 16rem;">
-      <div class="card-body">
-        <h5 class="card-title">Ключи, не давшие конверсию</h5>
-        <h6 class="card-subtitle mb-2 text-body-secondary">> 100 руб/клик</h6>
-        <p class="card-text">Сортировка по возрастанию. Выберите желаемый формат выгрузки:</p>
-        <a href="#" class="card-link">exel-формат</a>
-        <a href="#" class="card-link">csv-формат</a>
-      </div>
-    </div>
-  </div>
   </div>
   </body>
 </html>
